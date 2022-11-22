@@ -24,30 +24,20 @@ def handleResults(results):
   for i in range(ROLLS):
     msg += OPTIONS[results[i]] + ' '
   print(msg)
-  # print(results)
 
   for i in range(6):
-    # print(i)
-    # print(OPTIONS[i])
     count = results.count(i-1)
     if i == 5:
       if count == 2:
-        # print('i5 c2')
         balance += WINNINGS[4]
       elif count == 3:
-        # print('i5 c3')
         balance += WINNINGS[5]
     if i == 1 and count == 3:
-      # print('i1 c3')
       balance += WINNINGS[3]
     elif count == 3:
-      # print('c3')
       balance += WINNINGS[2]
     elif count == 2:
-      # print('c2')
-      # print(WINNINGS[1])
       balance += WINNINGS[1]
-  # print(balance)
   if balance <= 0:
     print('you lost all your money! Resetting...')
     balance = STARTING_CREDIT
@@ -56,7 +46,6 @@ def generateResults():
   global balance
   balance += PLAY_COST
   balance = round(balance, 2)
-  # print(PLAY_COST)
   res = []
   for _ in range(ROLLS):
     res.append(random.randint(0, 5))
