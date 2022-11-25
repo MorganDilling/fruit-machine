@@ -86,5 +86,5 @@ if __name__ == "__main__":
       if inp in case:
         print(f'Something went wrong. \n{err}')
       else:
-        print('Unknown command.')
+        print('Unknown command. Type "help" for a list of commands.')
       continue
